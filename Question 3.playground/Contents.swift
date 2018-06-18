@@ -20,6 +20,8 @@ func changePossibilities(amount: Int, denominations: [Int], index: Int = 0) -> I
    return changePossibilities(amount: amount - denominations[index], denominations: denominations, index: index) + changePossibilities(amount: amount, denominations: denominations, index: index + 1)
 }
 
+changePossibilities(amount: 4, denominations: [1,2,3]) //4
+
 class CodePathTester: XCTestCase {
     
     static public func changePossibiltiesTest(amount: Int, denomination: [Int], expected: Int) {
