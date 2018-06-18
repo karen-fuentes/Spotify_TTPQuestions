@@ -46,21 +46,24 @@ sortByStrings(s: "weather", t: "therapyw") //output = "theeraw"
 sortByStrings(s: "good", t: "odg") // output = "oodg"
 
 //class to test different inputs and outputs
-class CodePathTester: XCTest {
+class CodePathTester: XCTestCase {
     
     static public func sortByStringsTest(s: String , t: String, expectedOutput: String) {
         //Arrange
         let expected = (s: s, t: t, answer: expectedOutput)
-        
+
         //action
         let result = sortByStrings(s: expected.s, t: expected.t)
-        
+
         //assert
-        XCTAssertEqual(result, expected.answer , "\(result) is equal \(expected)")
+        assert(expected.answer == result)
     }
+  
 }
+
 CodePathTester.sortByStringsTest(s: "weather", t: "therapyw", expectedOutput: "theeraw")
 CodePathTester.sortByStringsTest(s: "good", t: "odg", expectedOutput: "oodg")
+
 
 
 
